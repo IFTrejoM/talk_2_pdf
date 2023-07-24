@@ -1,4 +1,4 @@
-Project Description: Talk_2_PDF
+Talk_2_PDF
 
 Summary:
 Talk_2_PDF is an interactive and powerful tool that allows you to chat with your PDF documents. Transform your PDF files into a virtual assistant that answers questions and provides relevant information in real-time. Say goodbye to time-consuming searches within extensive documents! Simply upload your PDF files and ask questions about their content. Talk to PDF employs advanced natural language processing and search algorithms to extract accurate and relevant information from your PDFs and presents it in a simple and easy-to-understand manner.
@@ -16,9 +16,9 @@ Key Features:
 
 How It Works:
 
-  Upload Your PDFs: Select and upload your PDF files to the platform.
-  Ask Questions: Type your questions about the document content in the text input.
-  Get Answers: Talk to PDF processes your questions, searches the documents, and provides relevant and precise answers.
+  1) Upload Your PDFs: Select and upload your PDF files to the platform.
+  2) Ask Questions: Type your questions about the document content in the text input.
+  3) Get Answers: Talk to PDF processes your questions, searches the documents, and provides relevant and precise answers.
 
 Technologies Used:
 
