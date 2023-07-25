@@ -1,5 +1,3 @@
-# https://github.com/alejandro-ao/ask-multiple-pdfs
-
 import streamlit as st
 from dotenv import load_dotenv # conda install -c "conda-forge/label/cf201901" python-dotenv
 from PyPDF2 import PdfReader
@@ -155,4 +153,6 @@ def main():
 if __name__ == "__main__":
     main()
 
-# streamlit run "c:/Users/Iván Trejo/OneDrive/Data Science/Proyectos/talk_2_pdf/talk_to_pdf.py"
+# Implemented from:
+# https://github.com/alejandro-ao/ask-multiple-pdfs
+# Thank you a lot!
