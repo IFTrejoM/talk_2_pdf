@@ -11,11 +11,12 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationalRetrievalChain
 from htmlTemplates import css, bot_template, user_template
 from langchain.llms import HuggingFaceHub
+from InstructorEmbedding import INSTRUCTOR
 
 def obtener_texto_pdf(docs_pdf):
     """Función que extrae el texto del (los) PDF"""
     
-    texto = ""
+    texto = ""anacon
     
     for pdf in docs_pdf:
         lector_pdf = PdfReader(pdf)
@@ -43,17 +44,18 @@ def crear_vectorstore(fracciones_de_texto):
     
     vectores_de_palabras = OpenAIEmbeddings()
     # vectores_de_palabras = HuggingFaceInstructEmbeddings(model_name='hkunlp/instructor-xl') # Alternativa gratuita
+    # vectores_de_palabras = INSTRUCTOR('hkunlp/instructor-xl')
     
     vectorstore = FAISS.from_texts(texts=fracciones_de_texto, embedding=vectores_de_palabras)
     
     return vectorstore
 
 def crear_cadena_de_conversación(vectorstore):
-    llm = ChatOpenAI()
-    # llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", 
-    #                     model_kwargs={"temperature":0.5,
-    #                                   "max_length":512}
-    #                     ) # Alternativa gratuita
+#    llm = ChatOpenAI()
+    llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", 
+                        model_kwargs={"temperature":0.5,
+                                      "max_length":1024} # 512
+                        ) # Alternativa gratuita
 
     memoria = ConversationBufferMemory(
         memory_key='chat_history',
@@ -146,8 +148,11 @@ def main():
                 
                 # Crea cadena de conversación:
                 st.session_state.conversation = crear_cadena_de_conversación(vectorstore)
+                
+            # Añade un mensaje de éxito si el archivo PDF fue procesado correctamente:
+            st.success("¡PDF procesado correctamente!")
 
 if __name__ == "__main__":
     main()
 
-# streamlit run "c:/Users/Iván Trejo/OneDrive/DEP/talk_to_pdf/talk_to_pdf.py"
+# streamlit run "c:/Users/Iván Trejo/OneDrive/Data Science/Proyectos/talk_2_pdf/talk_to_pdf.py"
