@@ -14,7 +14,7 @@ from InstructorEmbedding import INSTRUCTOR
 def obtener_texto_pdf(docs_pdf):
     """Función que extrae el texto del (los) PDF"""
     
-    texto = ""anacon
+    texto = ""
     
     for pdf in docs_pdf:
         lector_pdf = PdfReader(pdf)
