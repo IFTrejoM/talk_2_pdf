@@ -1,5 +1,5 @@
 import streamlit as st
-from dotenv import load_dotenv # conda install -c "conda-forge/label/cf201901" python-dotenv
+# from dotenv import load_dotenv # conda install -c "conda-forge/label/cf201901" python-dotenv
 from PyPDF2 import PdfReader
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
@@ -93,7 +93,7 @@ def procesar_pregunta(pregunta_de_usuario):
 
 def main():
     
-    load_dotenv()
+    # load_dotenv()
     
     ## ENTORNO PRINCIPAL ##
     
