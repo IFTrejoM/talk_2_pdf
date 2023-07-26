@@ -49,11 +49,11 @@ def crear_vectorstore(fracciones_de_texto):
     return vectorstore
 
 def crear_cadena_de_conversación(vectorstore):
-#    llm = ChatOpenAI()
-    llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", 
-                        model_kwargs={"temperature":0.5,
-                                      "max_length":1024} # 512
-                        ) # Alternativa gratuita
+    llm = ChatOpenAI()
+    # llm = HuggingFaceHub(repo_id="google/flan-t5-xxl", 
+    #                     model_kwargs={"temperature":0.5,
+    #                                   "max_length":1024} # 512
+    #                     ) # Alternativa gratuita
 
     memoria = ConversationBufferMemory(
         memory_key='chat_history',
